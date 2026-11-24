@@ -26,6 +26,25 @@ efficiency, with tail risk appropriately constrained to the client’s expectati
 | Vanilla ATM Put (Baseline) | $484.01 | 0% |
 | Down-and-In Put (Barrier 5310) | $480.71 | 0.7% |
 
+The down and in put provides a more conditional form of downside protection compared to 
+a vanilla ATM put. Unlike the vanilla structure, which offers immediate and continuous 
+protection, the down and in put only becomes active once a predefined barrier (−10% of 
+spot) is breached, creating initial activation risk. This means the client remains unhedged 
+in moderate drawdowns and could receive nothing if the barrier is never triggered. 
+However, given a strong conviction that markets will eventually decline beyond the barrier, 
+this risk becomes less significant. Once activated, the strategy offers equivalent unlimited 
+downside protection to a vanilla put. It also improves risk efficiency through a reduced 
+Greeks exposure, including lower vega and positive theta while the option is inactive. The 
+main trade-offs are activation uncertainty and slightly lower liquidity, but overall the 
+structure offers conditionally lower risk, especially considering the client’s 
+
+### Strategy 3: Digital Put Spread (3-Year)
+
+| Strategy | Price | Cost Saving |
+|---|---|---|
+| Vanilla ATM Put (Baseline) | $484.01 | 0% |
+| Digital Put Spread (L −15% / S −30%) | $141.29 | 70.8% |
+
 The digital put spread offers a significantly cheaper alternative to a vanilla ATM put, 
 reducing upfront cost by around 70% and lowering exposure to vega. However, this 
 efficiency comes at the expense of a much narrower and more conditional protection 
@@ -38,27 +57,7 @@ unstable P&L movements if the market fluctuates around these levels. Liquidity i
 weaker, with wider spreads and a more complex valuation for the exotic option. Despite its 
 lower cost, the digital spread does represent higher risk in most scenarios. 
 
-### Strategy 3: Digital Put Spread (3-Year)
-
-| Strategy | Price | Cost Saving |
-|---|---|---|
-| Vanilla ATM Put (Baseline) | $484.01 | 0% |
-| Digital Put Spread (L −15% / S −30%) | $141.29 | 70.8% |
-
-The down and in put provides a more conditional form of downside protection compared to 
-a vanilla ATM put. Unlike the vanilla structure, which offers immediate and continuous 
-protection, the down and in put only becomes active once a predefined barrier (−10% of 
-spot) is breached, creating initial activation risk. This means the client remains unhedged 
-in moderate drawdowns and could receive nothing if the barrier is never triggered. 
-However, given a strong conviction that markets will eventually decline beyond the barrier, 
-this risk becomes less significant. Once activated, the strategy offers equivalent unlimited 
-downside protection to a vanilla put. It also improves risk efficiency through a reduced 
-Greeks exposure, including lower vega and positive theta while the option is inactive. The 
-main trade-offs are activation uncertainty and slightly lower liquidity, but overall the 
-structure offers conditionally lower risk, especially considering the client’s market view. 
-
 ### Strategy 4: Forward Put Spread Ladder (3-Year)
-
 
 | Strategy | Price | Cost Saving |
 |---|---|---|
